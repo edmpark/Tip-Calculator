@@ -52,17 +52,20 @@ function calculateTip(){
 }
 
 function updateDisplay(){
-    let nTotal= parseFloat(tipAmount)+parseFloat(bill);
-    let perPersonPay = nTotal/parseInt(numPeople);
+    const result = document.getElementById('result');
+
+    result.innerHTML='';
+
+    let nTotal= (parseFloat(tipAmount)+parseFloat(bill)).toFixed(2);
+    let perPersonPay = (nTotal/parseInt(numPeople)).toFixed(2);
+    tipAmount = tipAmount.toFixed(2);
 
     let br1 = document.createElement("br");
     let br2 = document.createElement("br");
 
-    let netTotal = document.createTextNode("Total with tip: " + nTotal);
-    let tipTotal = document.createTextNode("Tip total: " + tipAmount);
-    let eachPersonCharge = document.createTextNode("Each person pays: "+ perPersonPay);
-    
-    const result = document.getElementById('result');
+    let netTotal = document.createTextNode("Total with tip: $" + nTotal);
+    let tipTotal = document.createTextNode("Tip total: $" + tipAmount);
+    let eachPersonCharge = document.createTextNode("Each person pays: $"+ perPersonPay);
     
     result.appendChild(netTotal);
     result.appendChild(br1);
