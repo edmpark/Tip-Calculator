@@ -2,6 +2,11 @@ let tipPercentage = 0;
 let tipAmount = 0;
 let tipAmountPerPerson = 0;
 
+let bill; 
+let serviceType ;
+let serviceQuality ;
+let numPeople ;
+
 const calculateButton = document.querySelector('#calculateButton');
 
 function calculateTip(){
@@ -40,14 +45,30 @@ function calculateTip(){
 
     tipAmount = bill*tipPercentage;
 
-    tipAmountPerPerson = 0; //resetting value
-    if(numPeople == 0) return;
+    if(numPeople == 0) { 
+        numPeople++;
+    }
     tipAmountPerPerson = tipAmount/numPeople;
 }
 
 function updateDisplay(){
-    let netTotal = document.createTextNode("Total with tip: " + tipAmount);
-    let netTotal = document.createTextNode("Total with tip: " + tipAmount);
+    let nTotal= parseFloat(tipAmount)+parseFloat(bill);
+    let perPersonPay = nTotal/parseInt(numPeople);
+
+    let br1 = document.createElement("br");
+    let br2 = document.createElement("br");
+
+    let netTotal = document.createTextNode("Total with tip: " + nTotal);
+    let tipTotal = document.createTextNode("Tip total: " + tipAmount);
+    let eachPersonCharge = document.createTextNode("Each person pays: "+ perPersonPay);
+    
+    const result = document.getElementById('result');
+    
+    result.appendChild(netTotal);
+    result.appendChild(br1);
+    result.appendChild(tipTotal);
+    result.appendChild(br2);
+    result.appendChild(eachPersonCharge);
 }
 
 calculateButton.addEventListener('click', button => {
