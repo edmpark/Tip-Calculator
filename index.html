@@ -8,15 +8,44 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
+    <div id="container">
 
-  
+        <form>
+            <p>Bill Amount</p>
+            <input type="text" id="bill" >
+            
+            <p>What service?</p>
+            <select id="services">
+                <option>Server</option>
+                <option>Bartender</option>
+                <option>Barber</option>
+                <option>Ride Service</option>
+                <option>Food Delivery</option>
+                <option>Hotel Room Service</option>
+            </select>
+
+            <p>How was the service?</p>
+            <select id="serviceQuality">
+                <option>Okay</option>
+                <option>Good</option>
+                <option>Bad</option>
+            </select>
+
+            <p>How many people sharing the bill?</p>
+            <input type="text" id="people" >
+
+        </form>
+        
+        <button id='calculate'>Calculate</button>
+
+    </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

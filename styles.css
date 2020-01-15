@@ -1,0 +1,22 @@
+*{
+    font-family: 'lucida sans' ,sans-serif;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #999966,  #808080);
+}
+
+#container{
+    height: 525px;
+    width: 360px;
+    margin: 100px auto;
+    text-align: center;
+    border: 3px solid #800000;
+    border-radius: 10px;
+}
+
+button{
+    
+}
