@@ -25,3 +25,7 @@ button{
     border-radius: 5px;
     outline: none;
 }
+
+#result{
+    margin-top: 1.5rem;
+}
